@@ -1,0 +1,28 @@
+<!-- statistiques_par_statut.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistiques par statut</title>
+</head>
+<body>
+    <h1>Statistiques par statut</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Statut</th>
+                <th>Nombre de consultations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stat in stats_par_statut %}
+                <tr>
+                    <th>consulté</th>
+                    <td>{{ stat.get_statut_display }}</td>
+                    <td>{{ stat.count }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
